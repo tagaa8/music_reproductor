@@ -67,6 +67,35 @@ this.songs = [
 
 ## Ejecutar la Aplicación
 
+### Método 1: Uso Directo en Móvil (SIN servidor web)
+
+**Para Android:**
+1. Descarga el repositorio como ZIP o clónalo en tu computadora
+2. Transfiere toda la carpeta del proyecto a tu teléfono (en Descargas o cualquier carpeta)
+3. Instala un navegador que soporte archivos locales como:
+   - **Kiwi Browser** (recomendado) - disponible en Play Store
+   - **Firefox** - también funciona bien con archivos locales
+4. Abre el navegador en tu teléfono
+5. Navega a la carpeta donde guardaste el proyecto
+6. Toca el archivo `index.html` para abrirlo
+7. ¡La aplicación debería cargar completamente con CSS y JavaScript!
+
+**Para iOS:**
+1. Descarga el repositorio y transfiérelo a tu iPhone/iPad
+2. Usa la app **Documents by Readdle** (gratis en App Store)
+3. Importa la carpeta del proyecto a Documents
+4. Navega hasta el archivo `index.html` dentro de Documents
+5. Toca el archivo para abrirlo en el navegador interno de Documents
+
+**Nota importante:** El Service Worker (funcionalidad offline) no funcionará con archivos locales, pero todas las demás funciones sí funcionan perfectamente, incluyendo:
+- Reproducción de música
+- Playlists y favoritos
+- Todas las animaciones y efectos visuales
+- Controles de reproducción
+- Búsqueda y navegación
+
+### Método 2: Con Servidor Web (Funcionalidad completa)
+
 ### En Windows
 
 1. Abre el archivo `index.html` directamente en tu navegador
@@ -106,7 +135,7 @@ php -S localhost:8000
 npx http-server
 ```
 
-### En dispositivos móviles
+### Acceso desde móvil a servidor en PC
 
 1. Asegúrate de que tu computadora y móvil estén en la misma red WiFi
 2. Encuentra tu IP local:
@@ -163,13 +192,26 @@ npx http-server
 - Confirma que los nombres de archivo en `script.js` coincidan exactamente
 - Revisa la consola del navegador (F12) para errores
 
+### El CSS no carga en móvil (archivos locales)
+- **Solución recomendada:** Usa **Kiwi Browser** en Android - es el que mejor maneja archivos locales
+- **Firefox móvil** también funciona bien
+- **Chrome móvil** a veces bloquea archivos locales por seguridad
+- Asegúrate de que TODA la carpeta del proyecto esté en tu teléfono, no solo el index.html
+
 ### No funciona en móvil
 - Algunos navegadores móviles requieren interacción del usuario para reproducir audio
 - Asegúrate de tocar play manualmente la primera vez
+- Si usas iOS, usa **Documents by Readdle** para mejor compatibilidad
 
 ### Service Worker no funciona con file://
 - El Service Worker requiere HTTPS o localhost
 - Usa un servidor local en lugar de abrir el archivo directamente
+- **Para archivos locales:** Las demás funciones funcionan perfectamente sin Service Worker
+
+### Problemas específicos en iOS
+- Safari móvil puede tener restricciones con archivos locales
+- Usa **Documents by Readdle** para mejor experiencia
+- Algunos archivos MP3 pueden necesitar formato específico para iOS
 
 ## Estructura del Proyecto
 
