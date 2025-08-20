@@ -235,8 +235,10 @@ def main():
     // Modified JavaScript with embedded songs
     class MusicPlayer {
         constructor() {
+            console.log('🚀 DEBUG: MusicPlayer constructor starting...');
             this.audio = document.getElementById('audioPlayer');
-            this.songs = EMBEDDED_SONGS;
+            this.songs = EMBEDDED_SONGS || [];
+            console.log('🚀 DEBUG: Loaded', this.songs.length, 'embedded songs');
             this.currentSongIndex = -1;
             this.isPlaying = false;
             this.isShuffle = false;
@@ -251,16 +253,24 @@ def main():
             this.playbackContext = 'all';
             this.contextPlaylistId = null;
 
-            this.initializeElements();
-            this.loadSongs();
-            this.setupEventListeners();
-            this.setupMediaSession();
-            
-            this.showSection('home');
+            try {
+                this.initializeElements();
+                this.loadSongs();
+                this.setupEventListeners();
+                this.setupMediaSession();
+                
+                this.showSection('home');
+                console.log('🚀 DEBUG: MusicPlayer initialization complete!');
+            } catch(error) {
+                console.error('❌ ERROR: MusicPlayer initialization failed:', error);
+            }
         }
 
         loadSongs() {
             // Songs are already loaded from EMBEDDED_SONGS
+            console.log('🎵 DEBUG: loadSongs called, songs:', this.songs.length);
+            console.log('🎵 DEBUG: First song:', this.songs[0]);
+            
             this.renderAllSongs();
             this.renderHomeAllSongs();
             this.renderLikedSongs();
