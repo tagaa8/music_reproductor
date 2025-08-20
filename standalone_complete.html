@@ -15,6 +15,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 body {
@@ -436,6 +442,8 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
+    touch-action: manipulation;
+    min-height: 72px;
 }
 
 .song-item:hover {
@@ -627,6 +635,9 @@ body {
     padding: 10px;
     border-radius: 50%;
     transition: all 0.3s ease;
+    touch-action: manipulation;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .control-buttons button:hover {
@@ -1852,6 +1863,6 @@ body {
     </div>
 
     <audio id="audioPlayer" preload="metadata"></audio>
-    <script src="script.js?v=12"></script>
+    <script src="script.js?v=13"></script>
 </body>
 </html>
