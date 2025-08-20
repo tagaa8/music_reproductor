@@ -67,7 +67,25 @@ this.songs = [
 
 ## Ejecutar la Aplicación
 
-### Método 1: Uso Directo en Móvil (SIN servidor web)
+### ⭐ Método 1: Archivo Único Standalone (RECOMENDADO)
+
+**El modo más fácil - Un solo archivo que funciona en cualquier móvil:**
+
+1. **Descarga solo el archivo `standalone_complete.html`** del repositorio (48MB)
+2. **Transfiere este único archivo a tu teléfono** (por USB, email, Drive, etc.)
+3. **Abre el archivo con cualquier navegador:**
+   - **Android:** Chrome, Firefox, Samsung Internet, etc.
+   - **iOS:** Safari, Chrome, Firefox, etc.
+4. **¡Funciona inmediatamente!** - Todo está incluido en un solo archivo
+
+**Ventajas del archivo standalone:**
+- ✅ **Un solo archivo** - fácil de transferir y usar
+- ✅ **Funciona en CUALQUIER navegador móvil** (Safari, Chrome, Firefox, etc.)
+- ✅ **No necesita servidor web ni instalación**
+- ✅ **Incluye toda la música y funcionalidad**
+- ✅ **Solo abres el archivo y funciona todo perfectamente**
+
+### Método 2: Proyecto completo (Para desarrolladores)
 
 **Para Android:**
 1. Descarga el repositorio como ZIP o clónalo en tu computadora
@@ -94,7 +112,7 @@ this.songs = [
 - Controles de reproducción
 - Búsqueda y navegación
 
-### Método 2: Con Servidor Web (Funcionalidad completa)
+### Método 3: Con Servidor Web (Funcionalidad completa + PWA)
 
 ### En Windows
 
