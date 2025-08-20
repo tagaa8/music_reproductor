@@ -278,15 +278,28 @@ def main():
         }
     '''
     
-    # Add the rest of the JavaScript (skip the class definition and loadSongs)
+    # Add the rest of the JavaScript (skip the class definition, constructor and loadSongs)
     js_lines = js_content.split('\n')
     in_class = False
+    in_constructor = False
     in_load_songs = False
     brace_count = 0
     
     for line in js_lines:
         if 'class MusicPlayer {' in line:
             in_class = True
+            continue
+        if in_class and 'constructor()' in line:
+            in_constructor = True
+            brace_count = 0
+            continue
+        if in_constructor:
+            if '{' in line:
+                brace_count += line.count('{')
+            if '}' in line:
+                brace_count -= line.count('}')
+            if brace_count <= 0:
+                in_constructor = False
             continue
         if in_class and 'loadSongs()' in line:
             in_load_songs = True
